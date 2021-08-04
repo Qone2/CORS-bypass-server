@@ -42,3 +42,10 @@ http://localhost:5050/cors-bypass/https://images.unsplash.com/photo-162766205579
 
 응답 예시:
 ![](https://images.unsplash.com/photo-1627662055794-94ab33f5913a)
+
+<br/>
+
+## 3. 주의사항
+
+- 위에서 말했듯이 image path 에 물음표를 포함하면 정상적으로 작동 하지 않습니다. 물음표를 역물을표(¿)로 바꿔주세요.
+- 어떤 이미지던간에 결국 jpg로 리턴하도록 되어있습니다.
