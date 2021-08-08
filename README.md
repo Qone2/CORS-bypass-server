@@ -41,7 +41,7 @@ http://localhost:5050/cors-bypass/https://images.unsplash.com/photo-162766205579
 ```
 
 응답 예시:
-![](https://images.unsplash.com/photo-1627662055794-94ab33f5913a)
+![](data/helper/photo-1627662055794-94ab33f5913a.jpeg)
 
 <br/>
 
