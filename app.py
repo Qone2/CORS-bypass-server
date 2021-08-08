@@ -10,8 +10,12 @@ def cors_bypass(img_path):
         "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.107 Safari/537.36"
     }
     img_file = None
+    resp = None
+    mimetype = None
     try:
-        img_file = requests.get(img_path.replace('¿', '?'), headers=custom_headers).content
+        resp = requests.get(img_path.replace('¿', '?'), headers=custom_headers)
+        img_file = resp.content
+        mimetype = resp.headers["content-type"]
     except requests.exceptions.MissingSchema:
         abort(400, "it is not url form")
     except Exception as e:
@@ -19,7 +23,7 @@ def cors_bypass(img_path):
         print(e)
         abort(500)
 
-    return Response(response=img_file, mimetype="image/jpeg")
+    return Response(response=img_file, mimetype=mimetype)
 
 
 if __name__ == '__main__':
