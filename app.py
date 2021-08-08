@@ -19,7 +19,7 @@ def cors_bypass(img_path):
         print(e)
         abort(500)
 
-    return Response(response=img_file, mimetype="image/jpg")
+    return Response(response=img_file, mimetype="image/jpeg")
 
 
 if __name__ == '__main__':
