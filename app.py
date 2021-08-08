@@ -18,6 +18,8 @@ def cors_bypass(img_path):
         mimetype = resp.headers["content-type"]
     except requests.exceptions.MissingSchema:
         abort(400, "it is not url form")
+    except KeyError:
+        abort(400, "original image response doesn't have 'content-type' header")
     except Exception as e:
         print(e.__class__)
         print(e)
